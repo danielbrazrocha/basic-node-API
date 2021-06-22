@@ -35,6 +35,7 @@ app.listen(port);
 app.get("/ddd", (req, res, next) => { res.json(objDDD); });
 app.get("/planos", (req, res, next) => { res.json(planos); });
 app.get("/tarifas", (req, res, next) => { res.json(tarifas); });
+app.get("/tarifas2", (req, res, next) => { res.json(tarifas); });
 
 
 console.log('todo list RESTful API server started on: ' + port);
