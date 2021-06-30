@@ -1,7 +1,12 @@
-var express = require('express'),
+//import cors from 'cors';
+
+express = require('express'),
+cors = require('cors')
+
 app = express(),
 port = process.env.PORT || 3000;
 app.use(express.json());
+app.use(cors()); 
 
 tarifas = {
     11: {
@@ -36,7 +41,6 @@ app.listen(port);
 app.get("/ddd", (req, res, next) => { res.json(objDDD); });
 app.get("/planos", (req, res, next) => { res.json(planos); });
 app.get("/tarifas", (req, res, next) => { res.json(tarifas); });
-app.get("/calcula", (req, res, next) => { res.json(tarifas); });
 
 app.post('/calculate', function(req, res) {
   function doCalculate(dddOrigem, dddDestino, plano, tempoLigacao) {

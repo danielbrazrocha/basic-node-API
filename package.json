@@ -13,10 +13,11 @@
     "heroku"
   ],
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1"
   },
   "engines": {
-    "node": "12.18.3"
+    "node": "^14.5.0"
   },
   "author": "Daniel Rocha",
   "license": "ISC"
