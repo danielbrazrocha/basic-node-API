@@ -27,10 +27,36 @@ tarifas = {
 
 objDDD = {
     origem: 
-        ['11', '16', '17', '18'],
+        [11, 16, 17, 18],
     destino:
-        ['11', '16', '17', '18']
+        [11, 16, 17, 18]
 };
+
+newObjDDD = [
+  [11, 16, 17, 18],
+  [11, 16, 17, 18]
+]
+
+Object.entries(newObjDDD).map( (ddd) => console.log(ddd))
+//console.log(newObjDDD["origem"])
+//objDDD["origem"].map( (ddd) => console.log(ddd))
+
+//Object.keys(Object.values(objDDD)).map( (ddd) => console.log(ddd))
+// Object.values(objDDD).map( (ddd) => {
+//   if (Object.keys(objDDD[ddd] == "origem") ) {
+//     console.log(ddd);
+//   }    
+// });
+
+// Object.entries(objDDD).forEach(([key, value]) => {
+//   if (key == "origem") {
+//       value.forEach( (item) => {
+//         console.log(item);
+//       } )
+    
+//   }    
+// });
+
 
 planos = ['Mais 30', 'Mais 60', 'Mais 120'];
 
