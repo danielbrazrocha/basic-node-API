@@ -1,7 +1,9 @@
-var express = require('express'),
-app = express(),
-port = process.env.PORT || 3000;
+var express = require('express');
+var cors = require('cors');
+app = express();
+port = process.env.PORT || 4242;
 app.use(express.json());
+app.use(cors())
 
 tarifas = {
     11: {
@@ -27,7 +29,12 @@ objDDD = {
         ['11', '16', '17', '18']
 };
 
-planos = ['Mais 30', 'Mais 60', 'Mais 120'];
+planos = {
+  "Mais 30": 30,
+  "Mais 60": 60,
+  "Mais 120": 120,
+
+}
 
 
 
@@ -36,9 +43,9 @@ app.listen(port);
 app.get("/ddd", (req, res, next) => { res.json(objDDD); });
 app.get("/planos", (req, res, next) => { res.json(planos); });
 app.get("/tarifas", (req, res, next) => { res.json(tarifas); });
-app.get("/calcula", (req, res, next) => { res.json(tarifas); });
 
 app.post('/calculate', function(req, res) {
+  console.log(req.body)
   function doCalculate(dddOrigem, dddDestino, plano, tempoLigacao) {
     if (!tempoLigacao) {
       alert('Favor Informar a duração da ligação');
